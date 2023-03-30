@@ -30,8 +30,8 @@ function calcDiscount(sum, min, discount) {
 
     let discountSum; // создайте переменную discountSum
 
-    if(productsSum >= discountMinSum) {// если productsSum больше или равно discountMinSum,
-    console.log(discountSum = `${productsSum / 100 * discountPart}`); // то присвойте discountSum значение discountPart процентов от productsSum,
+    if(productsSum > discountMinSum || productsSum == discountMinSum) {// если productsSum больше или равно discountMinSum,
+    console.log(discountSum = productsSum / 100 * discountPart); // то присвойте discountSum значение discountPart процентов от productsSum,
     } else {
     console.log(discountSum = 0); // иначе присвойте discountSum значение 0
     }
@@ -49,11 +49,11 @@ function calcInvoice({sum, discountMinSum, discountPart, shippingFreeMinSum, shi
     let totalSum; // создайте переменную totalSum
 
    totalSum = productsSum; // присвойте totalSum значение productsSum
-   totalSum = `${totalSum - discountSum}`; // уменьшите totalSum на discountSum
+   totalSum = totalSum - discountSum; // уменьшите totalSum на discountSum
 
     let shippingSum = calcShipping(totalSum, shippingFreeMinSum, shippingPrice); // не изменяйте эту строку!!!
 
-    totalSum = `${totalSum + shippingSum}`; // прибавьте к totalSum значение shippingSum
+    totalSum = totalSum + shippingSum; // прибавьте к totalSum значение shippingSum
 
     let freeShipping; // создайте переменную freeShipping
     // запишите без использования if или любых других условий:
