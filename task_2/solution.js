@@ -7,14 +7,13 @@ function calcShipping(sum, min, shipping) {
 
     let shippingSum; // создайте переменную shippingSum
 
-    if(productsSum === 0) { // если productsSum равно 0,
-    console.log(shippingSum = 0);// то shippingSum присвоить значение 0
-    }
-    if(productsSum > freeShippingMinSum || productsSum == freeShippingMinSum) { // если productsSum Больше или равна freeShippingMinSum,
-    console.log(shippingSum = 0);// то shippingSum присвоить значение 0
-    }   
-    if(productsSum > 0 && productsSum < freeShippingMinSum) { // если productsSum больше 0 и меньше freeShippingMinSum,
-    console.log(shippingSum = shippingPrice); // то shippingSum присвоить значение shippingPrice
+    // если productsSum равно 0,
+    // то shippingSum присвоить значение 0
+    
+    if(productsSum == 0 || productsSum >= freeShippingMinSum) { // если productsSum Больше или равна freeShippingMinSum,
+    shippingSum = 0;// то shippingSum присвоить значение 0
+    } else { // если productsSum больше 0 и меньше freeShippingMinSum,
+    shippingSum = shippingPrice; // то shippingSum присвоить значение shippingPrice
     }
     // Конец решения задания №2.1.
 
@@ -31,9 +30,9 @@ function calcDiscount(sum, min, discount) {
     let discountSum; // создайте переменную discountSum
 
     if(productsSum > discountMinSum || productsSum == discountMinSum) {// если productsSum больше или равно discountMinSum,
-    console.log(discountSum = productsSum / 100 * discountPart); // то присвойте discountSum значение discountPart процентов от productsSum,
+    discountSum = productsSum / 100 * discountPart; // то присвойте discountSum значение discountPart процентов от productsSum,
     } else {
-    console.log(discountSum = 0); // иначе присвойте discountSum значение 0
+    discountSum = 0; // иначе присвойте discountSum значение 0
     }
     // Конец решения задания №2.2.
 
